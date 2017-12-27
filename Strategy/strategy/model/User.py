@@ -1,5 +1,5 @@
 from sqlalchemy import *
-from strategy.sqlBase import Base, DBSession
+from strategy.sqlBase import Base
 import logging
 
 

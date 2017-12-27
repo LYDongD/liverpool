@@ -1,19 +1,24 @@
-from strategy.model.User import User
 from strategy.sqlBase import DBSession
 import strategy.digitalCurrencyExchange
 import requests
+from strategy.CoinQuoteRequest import *
+
 
 session = DBSession()
 
 
 def main():
-    #user_id = User.add(session, name='pony3')
-    #print(User.get(session, user_id=user_id))
 
-    a = 0.18050114
-    b = 0.01745870
-    c = 0.09723543
-    strategy.digitalCurrencyExchange.isPrice(a, b, c)
+    while True:
+
+    ltc_btc = CoinQuoteRequest.get_coin_quote_last_price('ltc_btc')
+    bch_btc = CoinQuoteRequest.get_coin_quote_last_price('bch_btc')
+    ltc_bch = CoinQuoteRequest.get_coin_quote_last_price('ltc_bch')
+
+    strategy.digitalCurrencyExchange.isPrice(ltc_btc, bch_btc, ltc_bch)
+
+
+
 
 if __name__ == '__main__':
     main()
