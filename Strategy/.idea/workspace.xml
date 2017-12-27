@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="057b14e9-dfcc-4ddd-9e5e-117babd98a16" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/strategy/digitalCurrencyExchange.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/Strategy.iml" afterPath="$PROJECT_DIR$/.idea/Strategy.iml" />
-      <change beforePath="$PROJECT_DIR$/strategy/httpTest.py" afterPath="$PROJECT_DIR$/strategy/httpTest.py" />
-      <change beforePath="$PROJECT_DIR$/strategy/main.py" afterPath="$PROJECT_DIR$/strategy/main.py" />
+      <change beforePath="$PROJECT_DIR$/strategy/digitalCurrencyExchange.py" afterPath="$PROJECT_DIR$/strategy/digitalCurrencyExchange.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="digitalCurrencyExchange.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="digitalCurrencyExchange.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/strategy/digitalCurrencyExchange.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+            <state relative-caret-position="300">
+              <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -33,7 +25,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="httpTest.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="httpTest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/strategy/httpTest.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -75,14 +67,14 @@
         <option value="$PROJECT_DIR$/strategy/__init__.py" />
         <option value="$PROJECT_DIR$/strategy/DigitalCurrencyExchange.py" />
         <option value="$PROJECT_DIR$/strategy/main.py" />
-        <option value="$PROJECT_DIR$/strategy/digitalCurrencyExchange.py" />
         <option value="$PROJECT_DIR$/strategy/httpTest.py" />
+        <option value="$PROJECT_DIR$/strategy/digitalCurrencyExchange.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="816" />
-    <option name="y" value="97" />
+    <option name="x" value="1055" />
+    <option name="y" value="102" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -260,7 +252,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="816" y="97" width="1400" height="1000" extended-state="0" />
+    <frame x="1055" y="102" width="1400" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -292,7 +284,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/strategy/digitalCurrencyExchange.py</url>
-          <line>201</line>
+          <line>200</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -347,22 +339,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/strategy/digitalCurrencyExchange.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/strategy/httpTest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/strategy/digitalCurrencyExchange.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>

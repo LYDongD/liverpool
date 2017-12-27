@@ -9,7 +9,6 @@ def isPrice(xbtc, ybtc, xy):
     if xy < 0 or xbtc < 0 or ybtc < 0:
         return
 
-    #priportion = xbtc/ybtc
     priportion = ybtc/xbtc
 
     # 根据条件建立仓位,lock==0时候,没有仓位#
