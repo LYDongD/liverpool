@@ -1,13 +1,12 @@
-from strategy.model.User import User
 from strategy.sqlBase import DBSession
-
+from strategy.CoinQuoteRequest import *
 
 session = DBSession()
 
 
 def main():
-    user_id = User.add(session, name='pony3')
-    print(User.get(session, user_id=user_id))
+    price = CoinQuoteRequest.get_coin_quote_last_price('ltc_btc')
+    print(price)
 
 
 if __name__ == '__main__':
