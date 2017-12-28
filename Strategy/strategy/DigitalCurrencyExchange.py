@@ -42,20 +42,15 @@ class DigitalCurrencyExchange(object):
         priportion = xbtc / ybtc
         print('公允价格=%f' % (priportion))
 
-<<<<<<< HEAD
+
         #偏离率
         deviation = xy/priportion
         print('=======偏离率 %f =========' %(deviation))
-=======
-        # 偏离率
-        deviation = priportion / xy * 100
-        print('=======偏离率 %f =========' % (deviation))
->>>>>>> ec3743176431c1dd7c3d2b4197f4bee5304320e6
+
 
         # 根据条件建立仓位,lock==0时候,没有仓位#
 
-        # 不断请求
-        # while True:
+
 
         # 设置平仓区间
         floatxy0 = xy - xy * 0.009
@@ -89,11 +84,11 @@ class DigitalCurrencyExchange(object):
             print('向上偏离')
             if priportion * 1.03 < xy and xy < priportion * 1.05:
 
-                print('lock:%d', self.lock)
+                print('5lock:%d' %(self.lock))
 
                 if self.lock == 0:
                     self.lock = 10
-                    print('lock:%d', self.lock)
+                    print('4lock:%d' %(self.lock))
                     # 计算买入均价
                     self.transactioncost = self.transactioncost + xy
                     self.couter += 1
@@ -108,7 +103,7 @@ class DigitalCurrencyExchange(object):
 
                     # 计算买入均价
                     self.transactioncost = self.transactioncost + xy
-                    self.couter = self.couter + 1;
+                    self.couter = self.couter + 1
 
                     print('20发出交易指令: %s' % (xy))
 
@@ -118,7 +113,7 @@ class DigitalCurrencyExchange(object):
 
                     # 计算买入均价
                     self.transactioncost = self.transactioncost + xy
-                    self.couter = self.couter + 1;
+                    self.couter = self.couter + 1
 
                     print('30发出交易指令: %s' % (xy))
 
@@ -128,7 +123,7 @@ class DigitalCurrencyExchange(object):
 
                     # 计算买入均价
                     self.transactioncost = self.transactioncost + xy
-                    self.couter = self.couter + 1;
+                    self.couter = self.couter + 1
 
                     print('40发出交易指令: %s' % (xy))
 
@@ -138,7 +133,7 @@ class DigitalCurrencyExchange(object):
 
                     # 计算买入均价
                     self.transactioncost = self.transactioncost + xy
-                    self.couter = self.couter + 1;
+                    self.couter = self.couter + 1
 
                     print('50发出交易指令: %s' % (xy))
 
@@ -148,7 +143,7 @@ class DigitalCurrencyExchange(object):
 
                     # 计算买入均价
                     self.transactioncost = self.transactioncost + xy
-                    self.couter = self.couter + 1;
+                    self.couter = self.couter + 1
 
                     print('60发出交易指令: %s' % (xy))
 
@@ -158,7 +153,7 @@ class DigitalCurrencyExchange(object):
 
                     # 计算买入均价
                     self.transactioncost = self.transactioncost + xy
-                    self.couter = self.couter + 1;
+                    self.couter = self.couter + 1
 
                     print('70发出交易指令: %s' % (xy))
 
@@ -168,7 +163,7 @@ class DigitalCurrencyExchange(object):
 
                     # 计算买入均价
                     transactioncost = transactioncost + xy
-                    couter = couter + 1;
+                    couter = couter + 1
 
                     print('80发出交易指令: %s' % (xy))
             if priportion * 1.9 < xy and xy < priportion * 2:
@@ -177,7 +172,7 @@ class DigitalCurrencyExchange(object):
 
                     # 计算买入均价
                     self.transactioncost = self.transactioncost + xy
-                    self.couter = self.couter + 1;
+                    self.couter = self.couter + 1
 
                     pass
             if priportion * 2.1 < xy and xy < priportion * 2.2:
@@ -186,7 +181,7 @@ class DigitalCurrencyExchange(object):
 
                     # 计算买入均价
                     self.transactioncost = self.transactioncost + xy
-                    self.couter = self.couter + 1;
+                    self.couter = self.couter + 1
 
                     print('110发出交易指令: %s' % (xy))
             if priportion * 2.2 < xy and xy < priportion * 2.4:
@@ -195,7 +190,7 @@ class DigitalCurrencyExchange(object):
 
                     # 计算买入均价
                     self.transactioncost = self.transactioncost + xy
-                    self.couter = self.couter + 1;
+                    self.couter = self.couter + 1
 
                     print('120发出交易指令: %s' % (xy))
             if priportion * 2.4 < xy and xy < priportion * 2.6:
@@ -204,7 +199,7 @@ class DigitalCurrencyExchange(object):
 
                     # 计算买入均价
                     transactioncost = transactioncost + xy
-                    couter = couter + 1;
+                    couter = couter + 1
 
                     print('140发出交易指令: %s' % (xy))
             if priportion * 2.6 < xy and xy < priportion * 3:
@@ -212,18 +207,22 @@ class DigitalCurrencyExchange(object):
                     self.lock = 300
                     # 计算买入均价
                     self.transactioncost = self.transactioncost + xy
-                    self.couter = self.couter + 1;
+                    self.couter = self.couter + 1
 
                     print('160发出交易指令: %s' % (xy))
+
+         ################################################################################
 
         # 向下偏离 XY < priportion #
         if xy < priportion:
 
+            print('1lock:', self.lock)
             print('向下偏离')
             if priportion * 0.97 < xy and xy < priportion * 1:
                 if self.lock == 0:
+                    print('2lock:', self.lock)
                     self.lock = -10
-
+                    print('3lock:', self.lock)
                     # 计算卖出均价
                     self.transactioncost = self.transactioncost + xy
                     self.couter = self.couter + 1;
@@ -296,6 +295,7 @@ class DigitalCurrencyExchange(object):
                     self.couter = self.couter + 1;
 
                     print('-80发出交易指令: %s' % (xy))
+
 
     # 延迟执行
 # time.sleep(1)
