@@ -5,7 +5,8 @@ import requests
 class HttpTest(object):
 
     def testGetRequst(self):
-        r = requests.get('http://customer.jinniubaotouzi.com/api/customer/news/finance')
+        r = requests.get('http://10.0.0.15:20000/api/customer/news/finance')
+
         return r.text
 
     def jsonHandle(self):
