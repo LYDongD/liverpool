@@ -13,12 +13,14 @@ def main():
     while True:
         ltc_btc = CoinQuoteRequest.get_coin_quote_last_price('ltc_btc')
 
-        bch_btc = CoinQuoteRequest.get_coin_quote_last_price('bch_btc')
+        eth_btc = CoinQuoteRequest.get_coin_quote_last_price('eth_btc')
 
-        ltc_bch = CoinQuoteRequest.get_coin_quote_last_price('ltc_bch')
-        print('ltc/btc市场价格: %f' % (ltc_bch))
+        ltc_eth = CoinQuoteRequest.get_coin_quote_last_price('ltc_eth')
+        print('ltc/btc市场价格: %f' % (ltc_eth))
 
-        vo.isPrice(ltc_bch, bch_btc, ltc_bch)
+        vo.isPrice(ltc_btc, eth_btc, ltc_eth)
+        vo.shortSelling(ltc_btc, eth_btc, ltc_eth)
+        
         time.sleep(3)
 
 
