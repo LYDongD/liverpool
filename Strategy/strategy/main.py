@@ -1,5 +1,5 @@
 from strategy.sqlBase import DBSession
-import strategy.digitalCurrencyExchange
+import strategy.DigitalCurrencyExchange
 import requests
 from strategy.CoinQuoteRequest import *
 import time
@@ -21,7 +21,7 @@ def main():
         ltc_bch = CoinQuoteRequest.get_coin_quote_last_price('ltc_bch')
         print('ltc/btc价格: %f' % (ltc_bch))
 
-        strategy.digitalCurrencyExchange.isPrice(ltc_btc, bch_btc, ltc_bch)
+        strategy.DigitalCurrencyExchange.isPrice(ltc_btc, bch_btc, ltc_bch)
 
         time.sleep(3)
 

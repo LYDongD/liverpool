@@ -4,6 +4,9 @@ import json
 
 class CoinQuoteRequest(object):
 
+
+
+
     @staticmethod
     def get_coin_quote_last_price(symbol):
         r = requests.get('http://localhost:20000/api/customer/quote/coins')
