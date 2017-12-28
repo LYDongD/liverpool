@@ -9,7 +9,7 @@ class DigitalCurrencyExchange(object):
     lock = 0
 
     # 本金
-    principal = 100
+    incipal = 100
 
     # difference =差价 #
     difference = 0
@@ -23,10 +23,19 @@ class DigitalCurrencyExchange(object):
     # counter =计数器,计算均价 #
     couter = 0
 
+    def __init__(self):
+        self.incipal = 100
+        self.lock = 0
+        self.difference = 0
+        self.yieldrate = 0
+        self.transactioncost = 0
+        self.couter = 0
+
     # x/btc y/btc :代表传入参标的最新价格
     #  xy 套利的标的市场价格
     # 通过市场价格和公允价格的比值,发送策略指令#
-    def isPrice(xbtc, ybtc, xy):
+    def isPrice(self, xbtc, ybtc, xy):
+
         # 效验参数
         if xy < 0 or xbtc < 0 or ybtc < 0:
             return
@@ -47,26 +56,26 @@ class DigitalCurrencyExchange(object):
         # 设置平仓区间
         floatxy0 = xy - xy * 0.007
         floatxy1 = xy + xy * 0.007
-        if priportion <= floatxy1 and priportion >= floatxy0 and lock !=0:
+        if priportion <= floatxy1 and priportion >= floatxy0 and self.lock != 0:
             # 1 发车指令平仓
             print('平仓价格%f' % (xy))
 
             # 2 计算收益率
-            difference = xy - transactioncost / couter
+            difference = xy - self.transactioncost / self.couter
             yieldrate = difference / priportion * 100
             print('>>>>>>>>>>>>>>>>>>平仓收益率: %s % >>>>>>>>>>>>>>>>' % (yieldrate))
 
             # 3 平仓后lock==0 #
-            lock = 0
+            self.ock = 0
 
             # 4 平仓后difference==0
-            difference = 0
+            self.difference = 0
 
             # 5 平仓后transactioncost==0
-            transactioncost = 0
+            self.transactioncost = 0
 
             # 6 平仓后counter计数器==0
-            couter = 0
+            self.couter = 0
 
             # 7 将收益存入数据库中
 
@@ -75,12 +84,12 @@ class DigitalCurrencyExchange(object):
 
             print('向上偏离')
             if priportion * 1.03 < xy and xy < priportion * 1.05:
-                if lock == 0:
-                    lock = 10
+                if self.lock == 0:
+                    self.lock = 10
 
                     # 计算买入均价
-                    transactioncost = transactioncost + xy
-                    couter = couter + 1;
+                    self.transactioncost = self.transactioncost + xy
+                    self.couter += 1
 
                     print('10发出交易指令: %s' % (xy))
                     localtime = time.asctime(time.localtime(time.time()))
