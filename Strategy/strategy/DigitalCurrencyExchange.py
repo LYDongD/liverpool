@@ -45,7 +45,7 @@ class DigitalCurrencyExchange(object):
         print('公允价格=%f'%(priportion))
 
         #偏离率
-        deviation = priportion/xy *100
+        deviation = xy/priportion
         print('=======偏离率 %f =========' %(deviation))
 
         # 根据条件建立仓位,lock==0时候,没有仓位#
@@ -54,8 +54,8 @@ class DigitalCurrencyExchange(object):
         # while True:
 
         # 设置平仓区间
-        floatxy0 = xy - xy * 0.007
-        floatxy1 = xy + xy * 0.007
+        floatxy0 = xy - xy * 0.009
+        floatxy1 = xy + xy * 0.009
         if priportion <= floatxy1 and priportion >= floatxy0 and self.lock != 0:
             # 1 发车指令平仓
             print('平仓价格%f' % (xy))
