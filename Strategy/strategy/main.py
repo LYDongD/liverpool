@@ -8,17 +8,20 @@ session = DBSession()
 
 
 def main():
+
     while True:
         ltc_btc = CoinQuoteRequest.get_coin_quote_last_price('ltc_btc')
+
         print('ltc/btc价格: %f' % (ltc_btc))
+
 
         bch_btc = CoinQuoteRequest.get_coin_quote_last_price('bch_btc')
         print('bch_btc价格: %f' % (bch_btc))
 
         ltc_bch = CoinQuoteRequest.get_coin_quote_last_price('ltc_bch')
-        print('ltc/btc价格: %f' % (ltc_bch))
+        print('ltc/btc市场价格: %f' % (ltc_bch))
 
-        strategy.DigitalCurrencyExchange.isPrice(ltc_btc, bch_btc, ltc_bch)
+        strategy.DigitalCurrencyExchange.DigitalCurrencyExchange.isPrice(ltc_btc, bch_btc, ltc_bch)
 
         time.sleep(3)
 
