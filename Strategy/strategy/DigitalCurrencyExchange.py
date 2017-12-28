@@ -4,24 +4,23 @@ import logging
 
 class DigitalCurrencyExchange(object):
 
-
-    # 锁
-    lock = 0
-
-    # 本金
-    incipal = 100
-
-    # difference =差价 #
-    difference = 0
-
-    # yieldrate =收益率 #
-    yieldrate = None
-
-    # transactioncost =开仓成本#
-    transactioncost = 0
-
-    # counter =计数器,计算均价 #
-    couter = 0
+    # # 锁
+    # lock = 0
+    #
+    # # 本金
+    # incipal = 100
+    #
+    # # difference =差价 #
+    # difference = 0
+    #
+    # # yieldrate =收益率 #
+    # yieldrate = None
+    #
+    # # transactioncost =开仓成本#
+    # transactioncost = 0
+    #
+    # # counter =计数器,计算均价 #
+    # couter = 0
 
     def __init__(self):
         self.incipal = 100
@@ -40,13 +39,18 @@ class DigitalCurrencyExchange(object):
         if xy < 0 or xbtc < 0 or ybtc < 0:
             return
 
-
         priportion = xbtc / ybtc
-        print('公允价格=%f'%(priportion))
+        print('公允价格=%f' % (priportion))
 
+<<<<<<< HEAD
         #偏离率
         deviation = xy/priportion
         print('=======偏离率 %f =========' %(deviation))
+=======
+        # 偏离率
+        deviation = priportion / xy * 100
+        print('=======偏离率 %f =========' % (deviation))
+>>>>>>> ec3743176431c1dd7c3d2b4197f4bee5304320e6
 
         # 根据条件建立仓位,lock==0时候,没有仓位#
 
@@ -66,7 +70,7 @@ class DigitalCurrencyExchange(object):
             print('>>>>>>>>>>>>>>>>>>平仓收益率: %s % >>>>>>>>>>>>>>>>' % (yieldrate))
 
             # 3 平仓后lock==0 #
-            self.ock = 0
+            self.lock = 0
 
             # 4 平仓后difference==0
             self.difference = 0
@@ -84,9 +88,12 @@ class DigitalCurrencyExchange(object):
 
             print('向上偏离')
             if priportion * 1.03 < xy and xy < priportion * 1.05:
+
+                print('lock:%d', self.lock)
+
                 if self.lock == 0:
                     self.lock = 10
-
+                    print('lock:%d', self.lock)
                     # 计算买入均价
                     self.transactioncost = self.transactioncost + xy
                     self.couter += 1
@@ -188,7 +195,7 @@ class DigitalCurrencyExchange(object):
 
                     # 计算买入均价
                     self.transactioncost = self.transactioncost + xy
-                    self.couter  = self.couter + 1;
+                    self.couter = self.couter + 1;
 
                     print('120发出交易指令: %s' % (xy))
             if priportion * 2.4 < xy and xy < priportion * 2.6:
