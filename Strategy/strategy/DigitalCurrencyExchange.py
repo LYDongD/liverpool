@@ -25,7 +25,7 @@ class DigitalCurrencyExchange(object):
         self.yieldrate = 0
         self.transactioncost = 0
         self.couter = 0
-        #self.yieldrate = 0
+
 
     # x/btc y/btc :代表传入参标的最新价格
     #  xy 套利的标的市场价格
@@ -42,8 +42,8 @@ class DigitalCurrencyExchange(object):
         print('偏离率: %f ' %(deviation))
 
         # 设置平仓区间
-        floatxy0 = xy - xy * 0.009
-        floatxy1 = xy + xy * 0.009
+        floatxy0 = xy - xy * 0.004
+        floatxy1 = xy + xy * 0.004
         if priportion <= floatxy1 and priportion >= floatxy0 and self.lock != 0:
 
             # 1 发车指令平仓
@@ -53,8 +53,8 @@ class DigitalCurrencyExchange(object):
 
                 absolute = xy - self.transactioncost / self.couter
                 self.difference = abs(absolute)
-                yieldrate = self.difference / priportion * 100
-                print('>>>>>>>>>>>>>>>>>>平仓收益率: %f  >>>>>>>>>>>>>>>>' % (yieldrate))
+                self.yieldrate = self.difference + self.difference / priportion * 100
+                print('>>>>>>>>>>>>>>>>>>平仓收益率: %f  >>>>>>>>>>>>>>>>' % (self.yieldrate))
 
                 # 3 平仓后lock==0 #
                 self.lock = 0
@@ -73,8 +73,8 @@ class DigitalCurrencyExchange(object):
             else :
 
                 self.difference = xy - self.transactioncost / self.couter
-                yieldrate = self.difference / priportion * 100
-                print('>>>>>>>>>>>>>>>>>>平仓收益率: %f  >>>>>>>>>>>>>>>>' % (yieldrate))
+                self.yieldrate = self.difference + self.difference / priportion * 100
+                print('>>>>>>>>>>>>>>>>>>平仓收益率: %f  >>>>>>>>>>>>>>>>' % (self.yieldrate))
 
                 # 3 平仓后lock==0 #
                 self.lock = 0
@@ -94,8 +94,7 @@ class DigitalCurrencyExchange(object):
         if xy > priportion:
 
             print('向上偏离')
-            if priportion * 1.01 < xy and xy < priportion * 1.05:
-
+            if priportion * 1.009 < xy and xy < priportion * 1.05:
                 if self.lock == 0:
                     self.lock = 10
 
@@ -174,50 +173,8 @@ class DigitalCurrencyExchange(object):
                     self.couter = self.couter + 1
 
                     print('80发出交易指令: %s' % (xy))
-            if priportion * 1.9 < xy and xy < priportion * 2:
-                if self.lock == 80:
-                    self.lock = 90
 
-                    # 计算买入均价
-                    self.transactioncost = self.transactioncost + xy
-                    self.couter = self.couter + 1
 
-                    pass
-            if priportion * 2.1 < xy and xy < priportion * 2.2:
-                if self.lock == 90:
-                    self.lock = 110
-
-                    # 计算买入均价
-                    self.transactioncost = self.transactioncost + xy
-                    self.couter = self.couter + 1
-
-                    print('110发出交易指令: %s' % (xy))
-            if priportion * 2.2 < xy and xy < priportion * 2.4:
-                if self.lock == 110:
-                    self.lock = 120
-
-                    # 计算买入均价
-                    self.transactioncost = self.transactioncost + xy
-                    self.couter = self.couter + 1
-
-                    print('120发出交易指令: %s' % (xy))
-            if priportion * 2.4 < xy and xy < priportion * 2.6:
-                if self.lock == 120:
-                    self.lock = 140
-
-                    # 计算买入均价
-                    self.transactioncost = self.transactioncost + xy
-                    self.couter = self.couter + 1
-
-                    print('140发出交易指令: %s' % (xy))
-            if priportion * 2.6 < xy and xy < priportion * 3:
-                if self.lock == 140:
-                    self.lock = 300
-                    # 计算买入均价
-                    self.transactioncost = self.transactioncost + xy
-                    self.couter = self.couter + 1
-
-                    print('160发出交易指令: %s' % (xy))
 
 
     # ---做多---
@@ -227,8 +184,8 @@ class DigitalCurrencyExchange(object):
 
 
         # 设置平仓区间
-        floatxy0 = xy - xy * 0.009
-        floatxy1 = xy + xy * 0.009
+        floatxy0 = xy - xy * 0.004
+        floatxy1 = xy + xy * 0.004
         if priportion <= floatxy1 and priportion >= floatxy0 and self.lock != 0:
             # 1 发车指令平仓
             print('平仓价格%f' % (xy))
@@ -236,8 +193,8 @@ class DigitalCurrencyExchange(object):
 
             # 2 计算收益率
             self.difference = xy - self.transactioncost / self.couter
-            yieldrate = self.difference / priportion * 100
-            print('>>>>>>>>>>>>>>>>>>平仓收益率: %f  >>>>>>>>>>>>>>>>' % (yieldrate))
+            self.yieldrate = self.difference + self.difference / priportion * 100
+            print('>>>>>>>>>>>>>>>>>>平仓收益率: %f  >>>>>>>>>>>>>>>>' % (self.yieldrate))
 
             # 3 平仓后lock==0 #
             self.lock = 0
@@ -258,27 +215,28 @@ class DigitalCurrencyExchange(object):
         # 向下偏离 XY < priportion #
         if xy < priportion:
             print('向下偏离')
-            if priportion * 0.93 < xy and xy < priportion * 0.98:
+            if priportion * 0.987 < xy and xy < priportion * 0.991:
                 if self.lock == 0:
                     self.lock = -10
+
                     # 计算卖出均价
                     self.transactioncost = self.transactioncost + xy
                     self.couter = self.couter + 1
-                    print('-10发出交易指令: %s' % (xy))
-            if priportion * 0.9 < xy and xy < priportion * 0.93:
+                    print('========-10发出交易指令: %s' % (xy))
+            if priportion * 0.98 < xy and xy < priportion * 0.987:
                 if self.lock == -10:
                     self.lock = -20
                     # 计算卖出均价
                     self.transactioncost = self.transactioncost + xy
                     self.couter = self.couter + 1
-                    print('-20发出交易指令: %s' % (xy))
-            if priportion * 0.85 < xy and xy < priportion * 0.9:
+                    print('=========-20发出交易指令: %s' % (xy))
+            if priportion * 0.85 < xy and xy < priportion * 0.98:
                 if self.lock == -20:
                     self.lock = -30
                     # 计算卖出均价
                     self.transactioncost = self.transactioncost + xy
                     self.couter = self.couter + 1
-                    print('-30发出交易指令: %s' % (xy))
+                    print('==========-30发出交易指令: %s' % (xy))
             if priportion * 0.7 < xy and xy < priportion * 0.85:
                 if self.lock == -30:
                     self.lock = -40
