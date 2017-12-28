@@ -8,9 +8,10 @@ import logging
 def isPrice(xbtc, ybtc, xy):
     # 效验参数
     if xy < 0 or xbtc < 0 or ybtc < 0:
-        return
+        returny
 
-    priportion = ybtc / xbtc
+    priportion = xbtc / ybtc
+    print('公允价格= %f' %(priportion))
 
     # 根据条件建立仓位,lock==0时候,没有仓位#
     lock = 0
@@ -37,14 +38,14 @@ def isPrice(xbtc, ybtc, xy):
     # 设置平仓区间
     floatxy0 = xy - xy * 0.007
     floatxy1 = xy + xy * 0.007
-    if priportion <= floatxy1 and priportion >= floatxy0:
+    if priportion <= floatxy1 and priportion >= floatxy0 and lock != 0:
         # 1 发车指令平仓
         print('平仓价格%f' % (xy))
 
         # 2 计算收益率
         difference = xy - transactioncost / couter
         yieldrate = difference / priportion * 100
-        print('平仓收益率: %s %' % (yieldrate))
+        print('=======================平仓收益率: %s %' % (yieldrate))
 
         # 3 平仓后lock==0 #
         lock = 0
@@ -61,7 +62,7 @@ def isPrice(xbtc, ybtc, xy):
         # 7 将收益存入数据库中
 
     # 向上偏离 xy > priportion #
-    if xy > priportion and lock == 0:
+    if xy > priportion:
 
         print('向上偏离')
         if priportion * 1.03 < xy and xy < priportion * 1.05:
@@ -191,7 +192,7 @@ def isPrice(xbtc, ybtc, xy):
                 print('160发出交易指令: %s' % (xy))
 
     # 向下偏离 XY < priportion #
-    if xy < priportion and lock == 0:
+    if xy < priportion:
 
         print('向下偏离')
         if priportion * 0.97 < xy and xy < priportion * 1:
