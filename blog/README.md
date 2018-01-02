@@ -1,0 +1,14 @@
+## 项目名称
+
+####个人博客
+
+## 目录结构
+
+* app 存放程序源代码，包括模板和静态文件
+* docs 存放相关说明文档
+* migrations 数据库迁移脚本
+* tests 单元测试
+* requirements 依赖声明文件
+* config.py 存储配置文件
+* manage.py 程序及其他任务启动文件
+* venv 虚拟环境
