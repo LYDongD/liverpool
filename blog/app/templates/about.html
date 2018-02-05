@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}关于本人{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-8 column">
+            <h1>About</h1>
+            <hr>
+            <h3>关于我</h3>
+            <font size="4"
+                  style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;">&nbsp;
+                &nbsp; &nbsp;我是一个<b style="box-sizing: border-box;"><font color="#800000"
+                                                                          style="box-sizing: border-box;">金融类产品后端开发工程师</font></b>，目前在深圳工作。</font><span
+                style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: large;">毕业于华中师范大学，专业数学与应用数学，兼修英语第二专业。</span><span
+                style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: large;">喜欢看书，分享，做一些有挑战的事情。</span>
+            <!--<h3>联系我</h3>-->
+            <!--<font size="4" style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;">&nbsp; &nbsp; &nbsp;<a href="http://zhihu.com/people/tie-xiao-tie-93">知乎：吃完饭后不刷牙</a></font><span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: large;">&nbsp; &nbsp; &nbsp;<a href="https://zhuanlan.zhihu.com/c_65033682">知乎专栏：汽车控制器</a></span><span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: large;">&nbsp; &nbsp; &nbsp;</span><a href="mailto:554050334@qq.com" style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: large;">邮箱：little_iron</a>-->
+            <h3>关于本站</h3>
+            <p><font size="4"
+                     style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;">&nbsp;
+                &nbsp; &nbsp;主要是技术分享和读书笔记，记录自己的成长历程</font><span
+                    style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: large;">。</span>
+            </p>
+
+            <table>
+                <tbody>
+                <tr>
+                    <td>2018.02</td>
+                    <td>记录，开始书写第一篇blog</td>
+                </tr>
+                <tr>
+                    <td>2016.11</td>
+                    <td>成长，全栈发展，主攻后端</td>
+                </tr>
+                <tr>
+                    <td>2015.09</td>
+                    <td>转身，自学编程, 开发手机应用</td>
+                </tr>
+                <tr>
+                    <td>2013.09</td>
+                    <td>起航，任教高中数学</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!--COMMENTS-->
+            <h2 id="comments">Comments</h2>
+
+            <!-- UY BEGIN -->
+            <div id="uyan_frame"></div>
+            <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2157207"></script>
+            <!-- UY END -->
+
+            <!--PC版-->
+            <!--<div id="SOHUCS"></div>-->
+            <!--<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js"></script>-->
+            <!--<script type="text/javascript">-->
+                 <!--window.changyan.api.config({-->
+                 <!--appid: 'cyts5dwPp',-->
+                 <!--conf: 'prod_c30d9b1f3b23febc85223681e65034d7'-->
+            <!--});-->
+
+            <div id="SOHUCS" ></div>
+			<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+			<script type="text/javascript">
+			window.changyan.api.config({
+			appid: 'cyt2wOIgh',
+			conf: 'prod_374465985311229072316cba563f0c3e'
+			});
+			</script>
+
+            </script>
+
+
+        </div>
+
+        <div class="col-md-1 column"></div>
+        <div class="col-md-3 column">
+            <img width="230px" height="320px" src="http://omdlmhd54.bkt.clouddn.com/WechatIMG6076.jpeg"/>
+            <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎交流</h2>
+            <hr>
+            <!--<h3 id="dashang">支持本站</h3>-->
+            <!--<p><font size="4" style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;">&nbsp; &nbsp;给站长打赏个饮料钱吧！</font><span style="box-sizing: border-box; color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: large;"></span></p>-->
+            <!--<a href="../paper/12"><img src="http://iron-flask.stor.sinaapp.com/static/zhifu.jpg" /></a>-->
+        </div>
+    </div>
+</div>
+
+{{ super() }}
+{% endblock %}
