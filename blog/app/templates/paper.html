@@ -22,7 +22,7 @@
 				</div>
 			</div>
 			
-			<hr><p>{{mypost.content|safe}}</p>
+			<hr><p id="result">{{mypost.content|safe}}</p>
 			
 			{% set tag_list = mypost.tag.split('#') %}
 			{% for tag in tag_list %}
@@ -39,7 +39,7 @@
 				</div>
 			</div>
 
-			<h2 id="comments">Comments</h2>
+			<h2 id="comments">评论</h2>
 			<!--PC版-->
 			<div id="SOHUCS" ></div>
 			<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
@@ -74,6 +74,7 @@
 			</div>
 		</div>
 	</div>
+
 </div>
 {{ super() }}
 {% endblock %}

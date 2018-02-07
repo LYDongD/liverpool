@@ -24,9 +24,9 @@ setup(
     author_email='yuedong.li@xhuabu.com',
     description="blog",
     long_description=open('README.md').read(),
-    packages=find_packages(exclude=['tests', 'venv', 'dist', 'migrations']),
+    # packages=find_packages(exclude=['tests', 'venv', 'dist', 'migrations']),
     # package_dir参考https://docs.python.org/2/distutils/setupscript.html
-    package_dir={'blog':'blog'},
+    packages=['app'],
 
     include_package_data=True,
     install_requires=requirements,

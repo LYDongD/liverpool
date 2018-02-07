@@ -4,7 +4,7 @@ baseDir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'pss123er'
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
@@ -21,7 +21,7 @@ class DevelopmentConfig(Config):
     DRIVER = 'pymysql'
     USERNAME = 'root'
     PASSWORD = 'pss123er'
-    HOST = '10.0.0.49'
+    HOST = '172.18.206.109'
     PORT = '3306'
     DATABASE = 'blog'
     SQLALCHEMY_DATABASE_URI = '{}+{}://{}:{}@{}:{}/{}?charset=utf8'.format(DIALECT, DRIVER, USERNAME, PASSWORD, HOST,
